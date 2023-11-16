@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>StormSteer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <img src="static/LOGO.png", style="width:100;height:100px;">
+        </header>
+
+        <div id="userParameters">
+            <!-- Navigation Form -->
+            <div id="nav">
+                <h2>Enter Start and End Addresses</h2>
+                <form method="post" action="/navigation">
+                    <h1 style="font-size: 40px; color: white;" >Start Address<br><input type="text" name="startAddress" autocomplete="off" placeholder="1 Moreton Parade, Petrie QLD 4502" style="font-size: 30px; width: 90%; border-radius: 15px;"><br><br>
+                    End Address<br><input type="text" name="endAddress" autocomplete="off" placeholder="N Lakes Dr, North Lakes QLD" style="font-size: 30px; width: 90%; border-radius: 15px;"><br><br></h1>
+                    <input type="submit" value="NAVIGATE" style="height: 40px; width: 20%; font-size: 20px; font-weight: bold; border-radius: 20px; color: white; background-color: purple; cursor: pointer;">
+                </form>
+                <div id="error-message-container">
+                    <div id="error-message" style="display: none; color: red;"><h2>Invalid Start or End Position</h2></div>
+                </div>
+            </div>
+            
+            <!-- Rainfall Form -->
+            <div id="rainfallForm">
+                <form method="post" action="/submit">
+                    <h1><label for="rainfallAmount" style="color: white;">Rainfall Amount (mm)</label></h1>
+                    <input type="number" name="rainfallAmount" id="rainfall_Amount" autocomplete="off" min="0" max="2000" step="1" class="form-input" style="font-size: 30px;"><br><br>
+                    <input type="submit" value="Submit Rainfall" class="form-button" style="height: 40px; width: 27%; font-size: 20px; font-weight: bold; border-radius: 20px; color: white; background-color: purple; cursor: pointer;">
+                </form>
+            </div>
+        </div>
+        <!-- Return Button -->
+        <div id="returnForm">
+            <form method="post" action="/">
+                <input type="submit" value="Go Back" style="height: 100px; width: 200px; font-size: 40px; font-weight: bold; border-radius: 20px; color: white; background-color: purple; cursor: pointer;">
+            </form>
+        </div>
+
+        <!-- Map -->
+        <div id="main">
+            <iframe id="mapFrame" src="{{ map_url }}" width="1180" height="810" frameborder="0"></iframe>   
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // Get the error message status from python
+    const errorStatus = Boolean('{{ error_status }}');
+    const errorMessageElement = document.getElementById('error-message');
+    // Function to display error message
+    function displayErrorMessage() {
+        errorMessageElement.style.display = 'block';
+    }
+
+    // Function to hide error message
+    function resetErrorMessage() {
+        errorMessageElement.style.display = 'none';
+    }
+    // Checks whether the message is displayed or not
+    if (errorStatus) {
+        displayErrorMessage();
+    } else {
+        resetErrorMessage(); 
+    }
+</script>

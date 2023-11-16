@@ -1,0 +1,77 @@
+body, h1, h2, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(50, 50, 50);
+    color: #333;
+}
+
+/* Style the header */
+#header {
+    background-color: purple;
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+}
+
+/* Style the navigation form */
+#nav {
+    display: inline-block;
+    top: 4%;
+    background-color: rgb(50, 50, 50);
+    border: 3px solid #ccc;
+    padding: 1%;
+    width: 36%;
+}
+
+/* Style the return form */
+#returnForm {
+    position: absolute;
+    top: 82%;
+    left: 14%;
+}
+
+/* Style the rainfall form */
+#rainfallForm {
+    top: 8%;
+    padding: 1%;
+    background-color: rgb(50, 50, 50);
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    width: 36%;
+    left: 20%;
+}
+
+form {
+    text-align: center;
+}
+input.form-input[type="text"],
+input.form-input[type="number"] {
+    width: 40%;
+    padding: 1%;
+    margin: 1% 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#error-message-container {
+    position: absolute;
+    top: 44.5%; /* Adjust as needed */
+    left: 10%; /* Adjust as needed */
+}
+
+/* Map */
+#main {
+    background-color: #fff;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    height: 84%; /* Adjust as needed */
+    width: 61.4%; /* Adjust as needed */
+    position: absolute;
+    top: 14.7%; /* Adjust as needed */
+    right: 0%;
+}
