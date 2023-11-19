@@ -4,16 +4,16 @@ To run simply install required libraries and attain relevant API credentials the
 
 Note that if using a free version account in Twilio, notifications will only be sent to verified phone numbers.
 
-**Prerequisites**
-OpenRouteServices API
-OpenWeatherMap API
-Twilio API
-flask (3.0.0)
-folium (0.14.0)
-pandas (2.1.0)
-openrouteservice (2.3.3)
-shapely (2.0.2)
-pyproj (3.6.1)
-requests (2.31.0)
-twilio (8.10.0)
-phonenumbers (8.13.24
+**Prerequisites:**
+OpenRouteServices API,
+OpenWeatherMap API,
+Twilio API,
+flask (3.0.0),
+folium (0.14.0),
+pandas (2.1.0),
+openrouteservice (2.3.3),
+shapely (2.0.2),
+pyproj (3.6.1),
+requests (2.31.0),
+twilio (8.10.0),
+phonenumbers (8.13.24),
